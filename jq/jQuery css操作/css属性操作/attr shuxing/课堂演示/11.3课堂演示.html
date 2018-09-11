@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+</style>
+<head>
+	<meta charset="UTF-8">
+	<title>演示文档</title>
+	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+	<style>
+	</style>
+</style>
+</head>
+<body>
+	<img src="HTML5.png" alt="" width="200" border="2">
+	<img src="HTML5.png" alt="" width="200" border="2">
+	<img src="HTML5.png" alt="" width="200" border="2"><br>
+	<input type="button" id="btn1" value="获取">
+	<input type="button" id="btn2" value="设置1">
+	<input type="button" id="btn3" value="设置2">
+	<input type="button" id="btn4" value="删除">
+
+	<script>
+		$(function(){
+			//获取元素的属性值
+			$('#btn1').click(function(){
+				alert($('img').attr('width'))
+			 	//alert($('img').css('width'))
+			})
+
+			// 第二个
+			$('#btn2').click(function(){
+				//设置单个CSS属性
+				//$('img').css('width','200')
+				//设置多个CSS属性
+				$('img').css({
+					'border':' 5px solid orange',
+					'border-radius':'10px',
+					'opacity':'0.5',
+					'margin-left':'10px',
+
+				})
+			})
+
+			//通过函数设置CSS样式
+			$('#btn3').click(function(){
+				$('img').css('width',function(index,value){
+					//alert(value);//带px单位，无法进行return进行运算，运用paseInt方法
+					//alert(parseInt(value))
+					return parseInt(value) *(index+1)/2+'px';
+					//通过parseInt转换宽度数值
+					//如果不加 +'px' 也可，建议为了提高兼容性，加上+'px'
+				})
+			})
+			$('#btn4').click(function(){
+				$('img').removeAttr('border width ')//删除多个属性，注意：只可去除对象自带默认的属性，后通过CSS方法设置的样式不可删除
+			})
+
+		})
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

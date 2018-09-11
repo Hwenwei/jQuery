@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <style>
+        * {
+            font-family: 微软雅黑;
+        }
+        
+        .error {
+            color: #f00;
+            font-weight: bold;
+            display: none;
+        }
+    </style>
+    <script src="jquery.js"></script>
+</head>
+
+<body>
+    <form action="reg.php" method='get'>
+        <p>用户名:</p>
+        <p>
+            <input type="text" name='username' class='auth'>
+            <span class='error'>用户名长度至少6位!</span>
+        </p>
+        <p>密码:</p>
+        <p>
+            <input type="text" name="password" class='auth'>
+            <span class='error'>密码长度至少8位!</span>
+        </p>
+        <p>确认密码:</p>
+        <p>
+            <input type="text" name='repassword' class='auth'>
+            <span class='error'>两次密码不一致!</span>
+        </p>
+        <p>邮箱:</p>
+        <p>
+            <input type="text" class="auth" name='email'>
+            <span class='error'>邮箱格式不正确!</span>
+        </p>
+        <p>手机号码:</p>
+        <p>
+            <input type="text" class="auth" name='phone' maxlength='11'>
+            <span class='error'>手机号码不正确!</span>
+        </p>
+        <p><input type="submit" value="Ok"></p>
+    </form>
+</body>
+<script>
+    // 表单验证
+
+    //思路：1.让每个表单各司其职，格式不正确则提示，反之不提示 2.错误时禁止提交表单 3.核心：判断表单内容是对是错再执行提交功能 。
+
+    //核心思路：a. 将每个表单各定义一个变量，如果为true则为1,false为0，然后往后累加，每个表单上都有个数计数器,当以上表单为正确时则相加至最后，最后一步才可提交。(将前面的表单想办法捆绑在一起)
+    //b:
+
+    //blur()失去焦点
+    //data()
+    $('input[name=username]').blur(function() {
+        val = this.value;//JS写法
+
+        if (val.length < 6) {
+            $(this).data({
+                's': 0
+            });
+            $(this).next().show(); //小于6 提示出现
+        } else {
+            $(this).data({
+                's': 1
+            });
+            $(this).next().hide(); //大小6 提示隐藏
+        }
+    });
+    $('input[name=password]').blur(function() {
+        val = this.value;
+
+        if (val.length < 8) {
+            $(this).data({
+                's': 0
+            });
+            $(this).next().show();
+        } else {
+            $(this).data({
+                's': 1
+            });
+            $(this).next().hide();
+        }
+    });
+
+    $('input[name=repassword]').blur(function() {
+        val1 = $('input[name=password]').val();
+        val2 = this.value;
+
+        if (val1 != val2) {
+            $(this).data({
+                's': 0
+            });
+            $(this).next().show();
+        } else {
+            $(this).data({
+                's': 1
+            });
+            $(this).next().hide();
+        }
+    });
+
+    $('input[name=email]').blur(function() {
+        val = this.value;
+
+        if (!val.match(/^\w+@\w+\.\w+$/i)) {
+            $(this).data({
+                's': 0
+            });
+            $(this).next().show();
+        } else {
+            $(this).data({
+                's': 1
+            });
+            $(this).next().hide();
+        }
+    });
+
+    $('input[name=phone]').blur(function() {
+        val = this.value;
+
+        if (!val.match(/^139\d{8}$/)) {
+            $(this).data({
+                's': 0
+            });
+            $(this).next().show();
+        } else {
+            $(this).data({
+                's': 1
+            });
+            $(this).next().hide();
+        }
+    });
+
+    $('form').submit(function() {
+
+        $('.auth').blur(); //让诸表单都失去焦点，触发禁止提交
+        ////return false;//思路：当所有的表单失去焦点时，禁止提交; 问题：但如何判断以上表单谁对谁错,注意此刻各表单都是独立的blur方法，互不关联，应当考虑让他们之间产生关联性。
+
+
+        tot = 0;
+
+        $('.auth').each(function() {
+            tot += $(this).data('s');
+        });
+
+        if (tot != 5) {
+            return false; //错误时禁止提交
+        }
+    });
+</script>
+
+</html>

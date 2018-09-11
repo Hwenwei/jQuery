@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQ</title>
+    <style>
+		*{
+			font-family: 微软雅黑;
+		}
+		
+		select{
+			width:100px;
+			height:150px;
+            text-align: center;
+		}
+	</style>
+	<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+</head>
+<body>
+    <h1>水果选择:</h1>
+	<form action="javascript:">	
+		<select name="" id="s1" size='2'>
+			<option value="">西瓜</option>
+			<option value="">冬瓜</option>
+			<option value="">苹果</option>
+			<option value="">南瓜</option>
+            <option value="">北瓜</option>
+            <option value="">香瓜</option>
+            <option value="">梨</option>
+            <option value="">香蕉</option>
+		</select>
+		<input type="button" value=">>" id='btn'>
+
+		<select name="" id="s2" size='2'>
+		</select>
+	</form>	
+    <hr>
+  
+</body>
+<script>
+$('#btn').click(function(){
+	$('#s1 option:selected').appendTo('#s2');
+});
+</script>
+</html>

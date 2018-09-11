@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BIAOQIAN</title>
+    <style>
+        * {
+            font-family: 微软雅黑;
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        .menu {
+            height: 50px;
+            background: #272822;
+            line-height: 50px;
+        }
+        
+        .menu ul {
+            list-style: none;
+        }
+        
+        .menu ul li {
+            float: left;
+            color: #fff;
+            margin-left: 15px;
+            line-height: 50px;
+            width: 100px;
+            text-align: center;
+        }
+        
+        .menu ul li:hover {
+            cursor: pointer;
+            background: #D3D3D3;
+        }
+        
+        .info {
+            height: 200px;
+            background: #ccc;
+            overflow: hidden;
+            padding: 15px;
+        }
+        
+        .info p {
+            display: none;
+           
+        }
+        
+        .info p:first-child {
+            display: block;
+        }
+        
+        .menu a:hover {
+            background: #ccc;
+        }
+    </style>
+    <script src="https://cdn.bootcss.com/jquery/1.7/jquery.min.js"></script>
+</head>
+<body>
+    <div class='menu'>
+        <ul>
+            <li>linux</li>
+            <li>php</li>
+            <li>javascript</li>
+        </ul>
+    </div>
+
+    <div class='info'>
+        <p> linux is very much!linux is very much!linux is very much!linux is very much!linux is very much!linux is very much!</p><br>
+
+        <p> php is very much!php is very much!php is very much!php is very much!php is very much!php is very much!</p><br>
+
+        <p>javascript is very much!javascript is very much!javascript is very much!javascript is very much!javascriptis very much!</p><br>
+    </div>
+</body>
+<script>
+    $('.menu li').eq().css({
+        'background': '#ccc'
+    });
+
+    $('.menu li').mouseenter(function() {
+        $(this).css({
+            'background': '#ccc'
+        });
+
+        $('.menu li').not($(this)).css({
+            'background': 'transparent'
+        });
+        idx = $(this).index('.menu li');
+
+        $('.info p').eq(idx).show();
+        $('.info p').not($('.info p').eq(idx)).hide();
+    });
+</script>
+
+</html>

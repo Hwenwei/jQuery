@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jq:循环切换</title>
+    <script src="https://cdn.bootcss.com/jquery/1.7/jquery.min.js"></script>
+</head>
+<body>
+      <img src="img/liyu2.jpg" alt="">
+       <!--<img src="img/he.jpg" alt="">-->
+</body>
+<!--第二部分-->
+<script>
+    // 方法一：
+//  $('img').click(function(){
+
+//         if(this.src.search("img/liyu2.jpg")!=-1){
+
+//             this.src="img/he.jpg";
+
+//         }else{
+
+//             this.src="img/he2.jpg";
+//         }
+//     });
+    // 方法二：
+
+$("img").toggle(
+    function(){
+    this.src="img/he.jpg"; 
+    },
+    function(){
+        this.src="img/liyu2.jpg";
+    },
+    function(){
+        this.src="img/mudan.jpg";
+    },
+    function(){
+        this.src="img/xiangyun.jpg"
+    });
+
+// 方法三：
+//        $("img").click(function(){
+
+// $(this).attr('src',$(this).attr('src')=='img/liyu2.jpg'?'img/he.jpg':'img/he2.jpg');})
+</script>
+</html>

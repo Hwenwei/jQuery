@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>form huan se</title>
+</head>
+<style>
+    .content{
+        width: 950px;
+        height: 780px;
+        /*border:  1px solid red;*/
+        margin: auto;
+    }
+ h1{
+     border-bottom: 1px dashed lightgray;
+     padding-bottom:10px;
+ }
+ .remen{
+        width:100%;
+        height: 75px;
+        /*border:1px solid red;*/
+        line-height: 75px;
+        text-align: center;
+ }
+ .remen ul li{
+     list-style: none;
+        float: left;
+        margin-left: 5px;
+        width:60px;
+        height:35px;
+        /*border:1px solid red;*/
+        text-align: center;
+        line-height: 35px;
+        color: #7d7f82;
+        font-size: 20px;
+ }
+ .remen ul li:nth-child(1){
+        float: left;
+        width:110px;
+        height:35px;
+        /*border:1px solid red;*/
+        margin-left: -35px;
+ }
+ .remen ul li:hover{
+        cursor: pointer;
+        color: #FFF;
+        background: green;
+        border-radius: 5px;
+ }
+ table{
+       width:950px;
+       height: 586px;
+       margin:auto;
+       /*border:  1px solid #7d7f82;*/
+       color: #7d7f82;
+       font-size: 20px;
+      
+ }
+ table tr th{
+       height: 30px;
+ }
+ table tr td{
+       text-align: center;
+       border:  1px solid #75b0a9;
+ }
+ table tr td:nth-child(7){
+       color: #fff;
+       width:80px; 
+       height:30px;
+       border-radius: 5px;
+       background:#fe6601; 
+       text-align: center;
+       line-height: 30px;
+ }
+</style>
+<body>
+    <div class="content">
+        <h1>最新机票</h1>
+        <div class="remen">
+            <ul>
+                <li>热门城市 ：</li>
+                <li>北京</li>
+                <li>成都</li>
+                <li>重庆</li>
+                <li>昆明</li>
+                <li>长沙</li>
+                <li>杭州</li>
+                <li>上海</li>
+                <li>深圳</li>
+            </ul>
+        </div>
+        <table cellspacing="0">
+           <tr>
+              <th>路线</th>
+              <th>日期</th>
+              <th>价格</th>
+              <th>税费</th>
+              <th>零食</th>
+              <th>航班</th>
+              <th>预定</th>
+           </tr>
+
+           <tr>
+               <td>北京-成都</td>
+               <td>12-12</td>
+               <td>￥680</td>
+               <td>￥80</td>
+               <td>有</td>
+               <td>春天航空</td>
+               <td>预定</td>
+           </tr>
+
+           <tr>
+               <td>北京-成都</td>
+               <td>12-12</td>
+               <td>￥680</td>
+               <td>￥80</td>
+               <td>有</td>
+               <td>春天航空</td>
+               <td>预定</td>
+           </tr>
+
+           <tr>
+               <td>北京-成都</td>
+               <td>12-12</td>
+               <td>￥680</td>
+               <td>￥80</td>
+               <td>有</td>
+               <td>春天航空</td>
+               <td>预定</td>
+           </tr>
+
+           <tr>
+               <td>北京-成都</td>
+               <td>12-12</td>
+               <td>￥680</td>
+               <td>￥80</td>
+               <td>有</td>
+               <td>春天航空</td>
+               <td>预定</td>
+           </tr>
+           <tr>
+               <td>北京-成都</td>
+               <td>12-12</td>
+               <td>￥680</td>
+               <td>￥80</td>
+               <td>有</td>
+               <td>春天航空</td>
+               <td>预定</td>
+           </tr>
+           <tr>
+               <td>北京-成都</td>
+               <td>12-12</td>
+               <td>￥680</td>
+               <td>￥80</td>
+               <td>有</td>
+               <td>春天航空</td>
+               <td>预定</td>
+           </tr>
+           <tr>
+               <td>北京-成都</td>
+               <td>12-12</td>
+               <td>￥680</td>
+               <td>￥80</td>
+               <td>有</td>
+               <td>春天航空</td>
+               <td>预定</td>
+           </tr>
+           <tr>
+               <td>北京-成都</td>
+               <td>12-12</td>
+               <td>￥680</td>
+               <td>￥80</td>
+               <td>有</td>
+               <td>春天航空</td>
+               <td>预定</td>
+           </tr>
+        </table>
+    </div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/1.7/jquery.min.js"></script>
+<script>
+    $("table tr:even").css({"background":"#75b0a9"})
+    // $(".box p:first-child").css({"background":"blue"})
+    // $(".box p:last-child").css({"background":"blue"})
+    $("table tr:odd").css({"background":"lightgray"})
+    $('table tr td:nth-child(3)').css({'color':'#fe6601'})
+</script
+</html>

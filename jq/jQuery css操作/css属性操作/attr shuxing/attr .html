@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>attr</title>
+</head>
+<body>
+    <img src="HTML5.png" width="200" height="300" border="1"><br>
+    <button>设置图像的属性：width</button>
+</body>
+        <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+        $("img").click(function(){ // 这里的img标签可以变为button,点击button来实现效果;
+    // $("img").attr("width","500");
+    // $('img').attr('height','360');
+     //下面一行中attr里的属性可为width或height;或是在style里面按照正常的css3样式编辑；
+            $('img').attr('style','width:500px;height:360px;border:3px solid orange;border-radius:10px;margin-left:600px;');
+
+            //    移除多个属性
+            // $('img').removeAttr('style'); //或写出style内的具体样式：width height  border  margin 
+               
+
+  });
+});
+</script>
+</html>
